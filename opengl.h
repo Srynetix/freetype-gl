@@ -49,8 +49,10 @@
 #  include <GL/glew.h>
 #  include <GL/wglew.h>
 #else
+# ifndef FREETYPE_GL_NO_GLEW
 #  include <GL/glew.h>
 #  include <GL/gl.h>
+# endif
 #endif
 
 #endif /* OPEN_GL_H */

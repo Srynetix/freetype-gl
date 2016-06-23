@@ -59,6 +59,8 @@ endif()
 find_package(OpenGL REQUIRED)
 find_package(Freetype REQUIRED)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
+
 if(NOT APPLE)
     find_package(GLEW REQUIRED)
 endif()
@@ -135,7 +137,7 @@ if(freetype-gl_BUILD_MAKEFONT)
         ${FREETYPE_LIBRARIES}
         ${MATH_LIBRARY}
     )
-    
+
     if(MSVC AND NOT (MSVC_VERSION LESS 1900))
         # prevent error LNK2019: unresolved external symbol _sprintf referenced in function __bdf_parse_properties
         # see http://stackoverflow.com/a/32418900/469659
